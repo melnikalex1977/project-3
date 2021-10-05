@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
 		<style type="text/css">
 			.material-icons.md-90 {font-size: 69px;}
+			.material-icons.md-24 {font-size: 24px;}
 		</style> 
     <title>{% block title %} {% endblock %}</title>
   </head>
@@ -22,14 +23,61 @@
 	<a href="{% url 'about' %}">About</a>
 	</header>-->
 
-	<nav class="navbar navbar-expand-md bg-success border border-dark">
-		<a href="#" class="navbar-brand"><i class="material-icons md-90  text-warning">face</i></a>
-		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link text-danger text-uppercase font-weight-bold" href="">Categories </a></li>	
-			<li class="nav-item"><a class="nav-link text-danger text-uppercase font-weight-bold" href="">Contacts </a></li>	
-			<li class="nav-item"><a class="nav-link text-danger text-uppercase font-weight-bold" href="">About </a></li>	
-		</ul>
-	</nav>	
+	<nav class="navbar navbar-expand-md navbar-light bg-dark">
+
+
+<a href="#" class="navbar-brand"><i class="material-icons text-success md-48">store</i></a>
+
+<button class="navbar-toggler  bg-light" data-toggle="collapse" data-target="#navbar"><span class="navbar-toggler-icon"></span></button>
+
+
+<div id="navbar" class="collapse navbar-collapse justify-content-between">
+
+<ul class="navbar-nav">
+
+<li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle" data-toggle="dropdown" href="">Categories</a>
+
+    <div class="dropdown-menu">
+
+    {% for category in links %}
+
+        <a class="dropdown-item" href="{‌{category.get_url}}">{‌{category.name}}</a>
+
+        {% endfor %}
+
+       
+
+    </div>
+
+</li>       
+
+<li class="nav-item"><a class="nav-link text-light text-uppercase px-3" href="">Contacts</a></li>
+
+<li class="nav-item"><a class="nav-link text-light text-uppercase px-3" href="">About</a></li>
+
+</ul>
+
+
+<form class="form-inline">
+
+<div class="input-group">
+
+<input type="text" placeholder="Search">
+
+<div>
+
+<button class="btn-success"><span class="material-icons md-24">search</span></button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</nav>
+
 	
 
 	{% block content %}
@@ -38,7 +86,9 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
