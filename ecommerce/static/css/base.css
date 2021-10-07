@@ -1,3 +1,22 @@
 body {
-	background: #606060
+	background: #098dc9
+}
+.product_title{
+	fonts-size: 90px;
+	text-transform:  uppercase;
+	letter-spacing: .2em;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+.product_text {
+	padding-right: 20px;
+
+}
+
+.product_desc {
+	fonts-size: 16px;
+	text-transform:  uppercase;
+	letter-spacing: .2em;
+
 }

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Product
+{% endblock %}
+
+{% block content %}
+  <div class="container py-5">
+    <div class="row mt-5">
+      <div class="col-10 mx-auto col-md-6 my-3">
+        <img src="{% static 'images/4.png' %}">
+      </div>
+    </div>
+  </div> 
+  <div class="col-10 mx-auto col-md-6 my-3">
+    <div>
+      <h1 class="product_title">sale</h1>
+      <h5 class="text-info font-italic mb-4">
+        $9.99
+      </h5>
+      <p class="product_desc">Product Descrition</p>
+      <p class="text-justify product_text">Lfdghdfghdhj
+      cfggdfjdrfjdfjdfyjfyjdfykjdftjd ddtbe eert rtu 
+      fdhgsetstyertyhwserysrtuysrt  sdfrgsefg stghdrt
+      drfgsergsegsegsegs setyhwsthsrthsrdthsrthdrhyuhruy
+      uyirftuiti tgrhdrthdrh dryhdfyjhfdryh u74567yu </p>
+      <p class="text-justify product_text">Out Of Stock</p>
+    </div>
+    
+  </div>
+{% endblock %}
