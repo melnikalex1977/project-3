@@ -1,4 +1,4 @@
-from .models import Category, Cart, CartItem
+from .models import Category, Cart, CartItem, Proba
 from .views import _cart_id
 
 def counter(request):
@@ -19,3 +19,7 @@ def counter(request):
 def menu_links(request):
 	links = Category.objects.all()
 	return dict(links=links)
+
+def menu_links1(request):
+	links = Proba.objects.all()
+	return dict(links1=links1)

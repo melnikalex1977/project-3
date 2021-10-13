@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Category, Product, Cart, CartItem
+from .models import Category, Product, Cart, CartItem, Proba, Product1
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import Group, User
 from .forms import SignUpForm 
