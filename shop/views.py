@@ -26,6 +26,23 @@ def product(request, category_slug, product_slug):
 		raise e	
 	return render(request, 'product.html', {'product': product})
 
+def home1(request, proba_slug=None):
+	proba_page = None
+	products1 = None
+	if proba_slug != None:
+		proba_page = get_object_or_404(Proba, slug=proba_slug)
+		products1 = Product1.objects.filter(proba=proba_page, available=True)
+	else:
+		products1 = Product1.objects.all().filter(available=True)
+	return render(request, 'home.html', {'proba':proba_page, 'products1':products1})
+
+def product1(request, proba_slug, product1_slug):
+	try:
+		product1 = Product1.objects.get(proba__slug=proba_slug, slug=product1_slug)
+	except Exception as e:
+		raise e	
+	return render(request, 'product1.html', {'product1': product1})
+
 def _cart_id(request):
 	cart = request.session.session_key
 	if not cart:
